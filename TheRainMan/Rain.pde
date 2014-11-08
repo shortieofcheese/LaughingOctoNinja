@@ -13,7 +13,7 @@ void setDrop(float _posX, float _posY, float _dropSize, float _fallSpeed){
 void drawDrop(){
   fill(200);
   
-  ellipse(posX, posY, dropSize, dropSize);
+  ellipse(posX, posY, dropSize/2, dropSize);
   
   posY += fallSpeed;
 }

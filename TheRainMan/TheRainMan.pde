@@ -1,13 +1,21 @@
+//DO NOT DETELE THIS
 Umbrella umbrella;
-Rain[] rain = new Rain [600];
-
+Rain[] rain = new Rain [630];
 int auxPosition = 0;
 int auxJumper = 0;
 
+// Set stuff here
+int umbrellaSize = 20;
+int dropSize = 10;
+float dropSpeed = 5;
+
+
 void setup(){
   
- size(600, 400); 
+ size(600, 400);
+ 
  umbrella = new Umbrella();
+ umbrella.setSize(20);
  
  for (int i = 0; i < rain.length; i++){
     rain[i] = new Rain();
@@ -17,7 +25,7 @@ void setup(){
     } else{
       auxJumper++; 
     }    
-    rain[i].setDrop((auxJumper * 20) + 5, (auxPosition*20) - height, 10, 5);
+    rain[i].setDrop((auxJumper * 20) + dropSize, (auxPosition*20) - height, dropSize, dropSpeed);
  }
 }
 
@@ -32,3 +40,4 @@ void draw(){
   }
   
 }
+
