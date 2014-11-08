@@ -1,29 +1,33 @@
 class Rain {
+  
+float posX, posY, dropSize, fallSpeed;
 
-float fallSpeed;
-int dropSize;
-PVector dropPosition = new PVector();
-
-void setDrop(float speed, int size, float posX, float posY){
- 
- speed = fallSpeed;
- size = dropSize;
- dropPosition.x = posX;
- dropPosition.y = posY;
- 
- 
+void setDrop(float _posX, float _posY, float _dropSize, float _fallSpeed){
+  posX = _posX;
+  posY = _posY;
+  dropSize = _dropSize;
+  fallSpeed = _fallSpeed;
+  
 }
 
 void drawDrop(){
   fill(200);
-  ellipse(dropPosition.x, dropPosition.y, dropSize, dropSize);
-
+  
+  ellipse(posX, posY, dropSize, dropSize);
+  
+  posY += fallSpeed;
 }
 
-void makeDropFall(){
+void repeatDrop(){
+ 
+ if (posY > height + dropSize/2){
   
-  dropPosition.y += fallSpeed;
+  posY = -dropSize/2;
+   
+ }
   
 }
+
+
 
 }
