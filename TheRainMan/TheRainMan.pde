@@ -2,7 +2,10 @@
 Umbrella umbrella;
 Rain[] rain = new Rain [630];
 int auxPosition = 0;
-int auxJumper = 0;
+int auxJumper = 0;  
+float health;
+
+
 
 // Set stuff here
 int umbrellaSize = 20;
@@ -30,7 +33,12 @@ void setup(){
 }
 
 void draw(){
-  background(255);
+ background(255);
+ float hp = map (health, 0, 10, width, 0);
+ fill(0,255,0);
+ rect(hp,0,width,10);
+ health = 1;
+  
   
   umbrella.drawUmbrella();
   
