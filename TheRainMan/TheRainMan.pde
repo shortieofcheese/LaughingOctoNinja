@@ -5,12 +5,10 @@ int auxPosition = 0;
 int auxJumper = 0;  
 float health;
 
-
-
 // Set stuff here
-int umbrellaSize = 20;
+int umbrellaSize = 50;
 int dropSize = 10;
-float dropSpeed = 5;
+float dropSpeed = 6;
 
 
 void setup(){
@@ -18,7 +16,7 @@ void setup(){
  size(600, 400);
  
  umbrella = new Umbrella();
- umbrella.setSize(20);
+ umbrella.setSize(umbrellaSize);
  
  for (int i = 0; i < rain.length; i++){
     rain[i] = new Rain();
@@ -33,19 +31,26 @@ void setup(){
 }
 
 void draw(){
- background(255);
- float hp = map (health, 0, 10, width, 0);
- fill(0,255,0);
- rect(hp,0,width,10);
- health = 1;
-  
-  
-  umbrella.drawUmbrella();
+ background(255);  
   
   for (int j = 0; j < rain.length; j++){
     rain[j].drawDrop();
     rain[j].repeatDrop();
+    rain[j].verifyCollision(umbrellaSize);
   }
+  
+  umbrella.drawUmbrella();
+  
+  drawHealthBar();
+  
+}
+
+void drawHealthBar(){
+ 
+ float hp = map (health, 0, 10, width, 0);
+ fill(0,255,0);
+ rect(hp,0,width,10);
+ health = 1;
   
 }
 
