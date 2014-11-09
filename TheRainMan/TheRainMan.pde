@@ -1,4 +1,5 @@
 //DO NOT DETELE THIS
+Man man;
 Umbrella umbrella;
 Rain[] rain = new Rain [630];
 int auxPosition = 0;
@@ -38,6 +39,8 @@ void draw(){
     rain[j].repeatDrop();
     rain[j].verifyCollision(umbrellaSize);
   }
+  
+  // man.drawMan();  (this makes a huge error - KG)  
   
   umbrella.drawUmbrella();
   
