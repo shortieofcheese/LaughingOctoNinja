@@ -15,7 +15,7 @@ float dropSpeed = 6;
 void setup(){
   
  size(600, 400);
- 
+ man = new Man();
  umbrella = new Umbrella();
  umbrella.setSize(umbrellaSize);
  
@@ -29,6 +29,9 @@ void setup(){
     }    
     rain[i].setDrop((auxJumper * 20) + dropSize, (auxPosition*20) - height, dropSize, dropSpeed);
  }
+ 
+ man.setSize(30);
+ 
 }
 
 void draw(){
@@ -40,7 +43,7 @@ void draw(){
     rain[j].verifyCollision(umbrellaSize);
   }
   
-  // man.drawMan();  (this makes a huge error - KG)  
+  man.drawMan();
   
   umbrella.drawUmbrella();
   

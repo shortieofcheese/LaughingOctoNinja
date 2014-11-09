@@ -4,7 +4,7 @@ don't worry)*/
 
 class Man {
   
-  PVector manPosition = new PVector (400, 0);
+  PVector manPosition = new PVector (0, 370);
   //(trying to make it random...) 
   int manSize;
   
