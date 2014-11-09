@@ -20,13 +20,23 @@ void drawDrop(){
 
 void repeatDrop(){
  
- if (posY > height + dropSize/2){
+ if (posY > height + dropSize){
   
   posY = -dropSize/2;
    
  }
   
 }
+
+void verifyCollision(int umbrella){
+
+if (posY + dropSize/2 >= height/2 - umbrella/2 && posY - dropSize/2 < height/2 + umbrella/2 && posX + dropSize/4 >= mouseX - umbrella/2 && posX - dropSize/4 < mouseX + umbrella/2){
+ 
+ posY = -height/2;
+  
+}
+}
+
 
 
 
