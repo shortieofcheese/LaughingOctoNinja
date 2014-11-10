@@ -3,8 +3,8 @@ Umbrella umbrella;
 Rain[] rain = new Rain [630];
 int auxPosition = 0;
 int auxJumper = 0;  
-float health;
 Guy guy;
+float health;
 
 // Set stuff here
 int umbrellaSize = 50;
@@ -36,10 +36,13 @@ void setup(){
   }
   guy = new Guy();
   guy.prime(guySpeed, guySize, guyStartPosX);
+  
+  health = 100;
 }
 
 void draw(){
- background(255);  
+  background(255);
+  println(health);  
   
   for (int j = 0; j < rain.length; j++){
     rain[j].drawDrop();
@@ -57,10 +60,9 @@ void draw(){
 
 void drawHealthBar(){
  
- float hp = map (health, 0, 10, width, 0);
+ float hp = map (health, 0, 100, width, 0);
  fill(0,255,0);
  rect(hp,0,width,10);
- health = 1;
   
 }
 

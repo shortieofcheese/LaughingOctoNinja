@@ -44,6 +44,7 @@ if (posY + dropSize/2 >= 390 - guySize/2 &&
     posX + dropSize/4 >= guyPosX - umbrella/2 &&
     posX - dropSize/4 < guyPosX + umbrella/2){
  
+ health -= 0.1;
  posY = -height/2;
   
 }
