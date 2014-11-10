@@ -3,49 +3,24 @@ class Guy {
 
   float movement;
   float speed;
-  float x = 0;
+  int guySize;
+  float posX;
 
-  void prime(float _speed) {
+  void prime(float _speed, int _size, float _x) {
     speed = _speed;
+    posX = _x;
+    guySize = _size;
   }
 
   void Update() {
 
-    ellipse(x, 390, 19, 19);
-    x += speed;
+    ellipse(posX, 390, guySize, guySize);
+    posX += speed;
     
-    if (x >= width || x < 0) {
+    if (posX >= width || posX < 0) {
       speed *= -1;
     }
   }
 }
 
-<<<<<<< HEAD
-=======
 
-
-class Man {
-
-  PVector manPosition = new PVector (0, 370);
-  //(trying to make it random...) 
-  int manSize;
-
-  void setSize(int _size) {
-    manSize = _size;
-  }
-
-  void drawMan () {
-    fill(20, 50, 30);
-    rect(manPosition.x, manPosition.y, manSize, manSize);
-  }
-}
-
-//Not working.. - Keiji 
-
-
-
->>>>>>> origin/master
-
-=======
-
->>>>>>> origin/master
