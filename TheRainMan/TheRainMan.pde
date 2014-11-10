@@ -1,6 +1,9 @@
 //DO NOT DETELE THIS
+<<<<<<< HEAD
 color lightBlue = #0998D5;
 Man man;
+=======
+>>>>>>> origin/master
 Umbrella umbrella;
 Rain[] rain = new Rain [630];
 int auxPosition = 0;
@@ -14,6 +17,7 @@ int dropSize = 10;
 float dropSpeed = 6;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 void setup() {
 
@@ -92,4 +96,54 @@ void setup() {
 
       >>>>>>> origin/master
     }
+=======
+void setup(){
+  
+ size(600, 400);
+ 
+ umbrella = new Umbrella();
+ umbrella.setSize(umbrellaSize);
+ 
+ for (int i = 0; i < rain.length; i++){
+
+    rain[i] = new Rain();
+    if (i % 30 == 0) {
+      auxPosition++;
+      auxJumper = 0;
+    } else {
+      auxJumper++;
+    }    
+    rain[i].setDrop((auxJumper * 20) + dropSize, (auxPosition*20) - height, dropSize, dropSpeed);
+
+  }
+  guy = new Guy();
+  guy.prime(3f);
+}
+
+void draw(){
+ background(255);  
+  
+  for (int j = 0; j < rain.length; j++){
+    rain[j].drawDrop();
+    rain[j].repeatDrop();
+    rain[j].verifyCollision(umbrellaSize);
+  }
+
+  guy.Update();
+  
+  umbrella.drawUmbrella();
+  
+  drawHealthBar();
+  
+}
+
+void drawHealthBar(){
+ 
+ float hp = map (health, 0, 10, width, 0);
+ fill(0,255,0);
+ rect(hp,0,width,10);
+ health = 1;
+  
+}
+>>>>>>> origin/master
 
