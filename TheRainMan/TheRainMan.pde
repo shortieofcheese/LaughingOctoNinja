@@ -41,6 +41,7 @@ void setup(){
 }
 
 void draw(){
+
   background(255);
   println(health);  
   
@@ -55,6 +56,12 @@ void draw(){
   umbrella.drawUmbrella();
   
   drawHealthBar();
+  
+ /* if(health <= 0){
+  setup();
+  }
+  tried to make it reset? but it gets weird...
+  */
   
 }
 
