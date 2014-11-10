@@ -41,11 +41,10 @@ void setup(){
 }
 
 void draw(){
-
   background(255);
-  println(health);  
   
-  for (int j = 0; j < rain.length; j++){
+  if (health > 0){
+   for (int j = 0; j < rain.length; j++){
     rain[j].drawDrop();
     rain[j].repeatDrop();
     rain[j].verifyCollision(umbrellaSize, guySize, guy.posX);
@@ -54,14 +53,13 @@ void draw(){
   guy.Update();
   
   umbrella.drawUmbrella();
-  
   drawHealthBar();
+ }
+ 
+ reset(); 
   
- /* if(health <= 0){
-  setup();
-  }
-  tried to make it reset? but it gets weird...
-  */
+  
+  
   
 }
 
@@ -70,9 +68,18 @@ void drawHealthBar(){
  float hp = map (health, 0, 100, width, 0);
  fill(0,255,0);
  rect(hp,0,width,10);
- 
- if (health <= 0){
-  setup(); 
- }
+
+}
+
+void reset(){
+  
+  if (health <=0){
+   textSize(40);
+   textAlign(CENTER, CENTER);
+   fill(0);
+   text ("Game Over", width/2, height/2);
+    
+  }
+  
 }
 
