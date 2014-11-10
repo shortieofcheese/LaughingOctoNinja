@@ -32,6 +32,7 @@ void setup(){
 
   }
   guy = new Guy();
+  guy.prime(3f);
 }
 
 void draw(){
