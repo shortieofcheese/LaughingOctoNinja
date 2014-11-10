@@ -49,8 +49,4 @@ if (posY + dropSize/2 >= 390 - guySize/2 &&
   
 }
 }
-
-
-
-
 }

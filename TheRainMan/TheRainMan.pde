@@ -1,4 +1,4 @@
-//DO NOT DETELE THIS
+// DO NOT DETELE THIS
 Umbrella umbrella;
 Rain[] rain = new Rain [630];
 int auxPosition = 0;
@@ -63,6 +63,9 @@ void drawHealthBar(){
  float hp = map (health, 0, 100, width, 0);
  fill(0,255,0);
  rect(hp,0,width,10);
-  
+ 
+ if (health <= 0){
+  setup(); 
+ }
 }
 
